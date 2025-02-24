@@ -1,18 +1,49 @@
+
+
 .navbar {
   width: 100%;
   background-color: #333;
   color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+body, .App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor del logo y subtítulo */
 .navbar-left {
   flex: 1;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Título (ni no kuni) */
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* subtítulo (Tu tienda de ropa) */
+.subtitulo {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 5px;  
+}
+
+/* Navbar centro */
 .navbar-center {
   flex: 2;
   display: flex;
@@ -21,28 +52,95 @@
   gap: 20px;
 }
 
-.search-input {
+/* Contenedor barra de búsqueda y botón */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 250px;
+  width: 300px;
+  font-size: 16px;
+  text-align: center;
 }
 
+/* Botón de búsqueda */
+.boton-buscar {
+  padding: 9px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.boton-buscar:hover {
+  background-color: #0056b3;
+}
+
+/* Enlaces */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
+/* Navbar lado derecho */
 .navbar-right {
   flex: 1;
   text-align: right;
 }
 
+/* Widget del carrito */
+.cart-widget {
+  font-size: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Número de productos en el carrito */
 .cart-widget span {
   background-color: red;
   color: white;
   border-radius: 50%;
-  padding: 3px 7px;
-  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 10px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .barra-busqueda {
+    width: 90%; /* 🔥 Se adapta a pantallas pequeñas */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
 }
