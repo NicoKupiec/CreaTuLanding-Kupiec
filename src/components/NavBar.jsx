@@ -22,7 +22,7 @@ const NavBar = ({ onSearch }) => {
       </div>
 
       <div className="navbar-center">
-        {/* Contenedor de búsqueda */}
+        {/* Contenedor de ventana de búsqueda */}
         <div className="search-container">
           <input
             type="text"
@@ -34,7 +34,7 @@ const NavBar = ({ onSearch }) => {
           <button className="boton-buscar" onClick={handleSearch}>Buscar</button>
         </div>
 
-        {/* 🔹 Nuevo div para los enlaces, asegurando que estén debajo */}
+        {/* enlaces, asegurando que estén debajo */}
         <div className="nav-links-container">
           <ul className="nav-links">
             <li><a href="#">Inicio</a></li>
